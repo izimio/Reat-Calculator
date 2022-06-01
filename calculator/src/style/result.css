@@ -1,0 +1,11 @@
+.result{
+    font-size: 5em;
+    color: white;
+    margin-right: 1em;
+}
+
+.result > h3{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
