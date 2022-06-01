@@ -9,3 +9,12 @@
     justify-content: end;
     align-items: flex-end;
 }
+
+.result > p{
+    font-size: 15px;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin-top: -5em;
+    color: white;
+}
