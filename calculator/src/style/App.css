@@ -1,0 +1,21 @@
+main{
+  display: flex;
+  height: 800px;
+  width: 600px;  
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fbbbbf;
+  border-radius: 50px;
+  margin: auto;
+}
+.numbers{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.operator{
+
+}
