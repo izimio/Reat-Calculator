@@ -1,8 +1,8 @@
-main{
+main {
   height: 800px;
-  width: 500px;  
+  width: 500px;
   position: absolute;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -11,21 +11,21 @@ main{
   margin: auto;
 }
 
-.Upper{
+.Upper {
   height: 20%;
   width: 100%;
 }
 
-.Lower{
+.Lower {
   margin-left: calc(2em + 10px);
   height: 80%;
 }
 
-.Lower--numbers{
+.Lower--numbers {
   display: flex;
   flex-wrap: wrap;
 }
 
-.Lower--tricks{
+.Lower--tricks {
   display: flex;
 }

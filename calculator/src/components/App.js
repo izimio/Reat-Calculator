@@ -1,33 +1,19 @@
 import '../style/App.css';
 import Button from "./Button"
 import Result from "./Result"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 export default function App() {
 
   const [latest, setLatest] = useState(false);
-  const [do_it, setDoit] = useState(false);
   const [result, setResult] = useState(0);
   const [calc, setCalc] = useState({
     num: [""],
     ope: [""]
   });
 
-  // useEffect(() => {
-  //   if (do_it) {
-  //     let res = eval(create_expression());
-  //     console.log(res);
-  //     res !== undefined ? setResult(res) : setResult("Error");
-  //     setDoit(false);
-  //   }
-  // }, [do_it]);
-
-  function HandleDoIt() {
-    setDoit(prev => !prev);
-  }
-
   function create_expression() {
-  
+
     let expression = "";
     calc.num.forEach((num, index) => {
       expression += num + calc.ope[index];
@@ -51,12 +37,12 @@ export default function App() {
     }
     if (ope === "=") {
       let res = eval(create_expression());
-      res == undefined ? setResult("Error") : setResult(res);
-      if (res == undefined)
+      res === undefined ? setResult("Error") : setResult(res);
+      if (res === undefined)
         return
       console.log(res);
       setCalc({
-        num: res == 0 ? [""] : [res.toString()],
+        num: res === 0 ? [""] : [res.toString()],
         ope: [""]
       });
       setLatest(false);

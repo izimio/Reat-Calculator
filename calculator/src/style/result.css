@@ -1,19 +1,19 @@
-.result{
+.result {
     font-size: 5em;
     color: white;
     margin-right: 1em;
 }
 
-.result > h3{
+.result>h3 {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: flex-end;
 }
 
-.result > p{
+.result>p {
     font-size: 15px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: flex-end;
     margin-top: -5em;
     color: white;
