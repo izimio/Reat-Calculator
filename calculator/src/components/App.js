@@ -27,7 +27,9 @@ export default function App() {
   }
 
   function create_expression() {
+  
     let expression = "";
+    calc.num.map((num) => num.replace(/[^0]\d+/), '')
     calc.num.forEach((num, index) => {
       expression += num + calc.ope[index];
     });
@@ -50,9 +52,13 @@ export default function App() {
       return
     }
     if (ope === "=") {
-      setResult(eval(create_expression()));
+      let res = eval(create_expression());
+      !res ? setResult("Error") : setResult(res);
+      if (res == undefined)
+        return
+      console.log(res);
       setCalc({
-        num: [result],
+        num: [res.toString()],
         ope: [""]
       });
       setLatest(false);
