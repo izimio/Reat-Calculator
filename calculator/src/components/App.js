@@ -53,12 +53,12 @@ export default function App() {
     }
     if (ope === "=") {
       let res = eval(create_expression());
-      !res ? setResult("Error") : setResult(res);
+      res == undefined ? setResult("Error") : setResult(res);
       if (res == undefined)
         return
       console.log(res);
       setCalc({
-        num: [res.toString()],
+        num: res == 0 ? [""] : [res.toString()],
         ope: [""]
       });
       setLatest(false);
