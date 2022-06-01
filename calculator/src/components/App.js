@@ -47,6 +47,8 @@ export default function App() {
     }
     if (ope === "=") {
       let res = eval(create_expression()).toString();
+      if (res.length > 7)
+      res = "*" + res.slice(0, 7);
       res === undefined ? setResult("Error") : setResult(res);
       if (res === undefined)
         return
