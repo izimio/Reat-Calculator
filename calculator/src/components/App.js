@@ -29,12 +29,10 @@ export default function App() {
   function create_expression() {
   
     let expression = "";
-    calc.num.map((num) => num.replace(/[^0]\d+/), '')
     calc.num.forEach((num, index) => {
       expression += num + calc.ope[index];
     });
-    expression = expression.slice(0, -1);
-    return expression.replace("undefine", "").replace("X", "*");
+    return expression.replace("undefined", "").replace("X", "*");
   }
   console.log(create_expression());
   function add_ope(ope) {
@@ -100,7 +98,7 @@ export default function App() {
   return (
     <main>
       <div className='Upper'>
-        <Result eval={create_expression()} result={result} handleDoIt={HandleDoIt} />
+        <Result eval={create_expression()} result={result} />
       </div>
       <div className='Lower'>
         <div className='Lower--numbers'>
