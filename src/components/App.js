@@ -34,8 +34,10 @@ export default function App() {
     ope = ope.toString();
     setBg(getRandomColor());
 
-    if (ope === "&")
+    if (ope === "&") {
+      setResult(prev => -prev);
       return
+    }
     if (ope === "AC") {
       setResult(0);
       setCalc({
@@ -47,13 +49,14 @@ export default function App() {
     }
     if (ope === "=") {
       let res = eval(create_expression()).toString();
-      if (res.length > 7)
-      res = "*" + res.slice(0, 7);
+      if (res.length > 7) {
+        res = "*" + res.slice(0, 7);
+      }
       res === undefined ? setResult("Error") : setResult(res);
       if (res === undefined)
         return
       setCalc({
-        num: res === 0 ? [""] : [res.toString()],
+        num: res === 0 ? [""] : [res.toString().replace("*", "")],
         ope: [""]
       });
       setLatest(false);
