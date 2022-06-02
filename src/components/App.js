@@ -34,8 +34,10 @@ export default function App() {
     ope = ope.toString();
     setBg(getRandomColor());
 
-    if (ope === "&")
+    if (ope === "&") {
+      setResult(prev => -prev);
       return
+    }
     if (ope === "AC") {
       setResult(0);
       setCalc({
